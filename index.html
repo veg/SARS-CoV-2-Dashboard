@@ -112,8 +112,18 @@
             id="loading"
             class="bg-white-300 flex-1 p-3 overflow-hidden panel loading-panel"
           >
-            <div class="loading-anim"></div>
-            <div class="loading-info"></div>
+            <div class="notice alert-banner alert-info">
+              <h1>The SARS-CoV-2 Selection Pressure Analyses has undergone a large
+              revision in order to accommodate the large amount of recent
+              data.</h1>
+
+              <h2>Please see 
+                <a
+                  href="https://observablehq.com/@spond/revised-sars-cov-2-analytics-page">
+                  this page
+                </a> for the latest results. We are anticipating a revised
+                dashboard as well soon.</h2>
+            </div>
           </div>
 
           <div
@@ -347,8 +357,8 @@
       let runtime = new Runtime();
 
       runtime.module(define, name => {
-        if (name === "svg") return Inspector.into(".loading-anim")();
-        if (name === "info") return Inspector.into(".loading-info")();
+        //if (name === "svg") return Inspector.into(".loading-anim")();
+        //if (name === "info") return Inspector.into(".loading-info")();
       });
     </script>
 
@@ -418,7 +428,7 @@
 
             _.delay(setSummary, 2000);
 
-            togglePanels("evolution-panel");
+            //togglePanels("evolution-panel");
             return func.bind(inspect)(value);
 
           });
